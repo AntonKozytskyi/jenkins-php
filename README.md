@@ -15,7 +15,7 @@ Package contains two containers:
 ### Getting the package
 *Note: Before you need to install the [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) on your server.*
 ```bash
-$ https://github.com/AntonKozytskyi/jenkins-php.git
+$ git clone https://github.com/AntonKozytskyi/jenkins-php.git
 $ cd jenkins-php
 ```
 
