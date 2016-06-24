@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  nginx:
+    image: jenkinsphp/nginx
+    container_name: jenkinsphp_nginx
+    restart: always
+    build: ./services/nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - jenkins
+    networks:
+      app:
+        ipv4_address: 172.31.1.2
+  jenkins:
+    image: jenkinsphp/jenkins
+    container_name: jenkinsphp_jenkins
+    restart: always
+    build: ./services/jenkins
+    ports:
+      - "8080:8080"
+    networks:
+      app:
+        ipv4_address: 172.31.1.3
+
+networks:
+  app:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.31.1.0/24
+          gateway: 172.31.1.1
