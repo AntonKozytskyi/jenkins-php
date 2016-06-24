@@ -7,7 +7,9 @@ Here the implementation of this idea: [Template for Jenkins Jobs for PHP Project
 ## How it works
 Package contains two containers:
 
-**jenkins** container runs the Jenkins CI Server on http://172.31.1.3:8080 address. In addition this container includes PHP-TOOLS
+**jenkins** container runs the Jenkins CI Server on http://172.31.1.3:8080 address.
+
+**nginx** container runs Nginx Web Server on http://172.31.1.2:80 address.
 
 ## How to use this package
 ### Getting the package
