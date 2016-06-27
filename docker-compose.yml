@@ -18,6 +18,8 @@ services:
     container_name: jenkinsphp_jenkins
     restart: always
     build: ./services/jenkins
+    volumes:
+      - data:/var/jenkins_home
     ports:
       - "8080:8080"
     networks:
@@ -32,3 +34,7 @@ networks:
       config:
         - subnet: 172.31.1.0/24
           gateway: 172.31.1.1
+
+volumes:
+  data:
+    driver: local
